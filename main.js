@@ -1,6 +1,6 @@
 enchant();
 
-function Load(width,height){
+function Game_load(width,height){
   var core = new Core(width, height);
   core.fps = 30;
   core.onload = function(){

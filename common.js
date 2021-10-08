@@ -72,6 +72,7 @@ $(function(){
   //ゲーム内の画面サイズ
   var gameWidth = 1600;
   var gameHeight = 900;
+
   //回転時の処理
   var orientationChange = function(){
     //画面サイズ設定
@@ -91,10 +92,17 @@ $(function(){
   $(window).on("orientationchange",function(event){
     orientationChange();
   });
-  //余白部分をドラッグすることによるスクロールを無効にする
-  //$("#base").on("touchstart",function(event){event.preventDefault();});
+
+  /*
+  $("#base").on("touchstart",function(event){event.preventDefault();});
+  $("#base").on("touchmove",function(event){event.preventDefault();});
+  $("#base").on("touchend",function(event){event.preventDefault();});
+  $("#base").on("touch",function(event){event.preventDefault();});
+  */
+  //余白部分タッチの無効
+
   //ゲームを実行する
-  Load(gameWidth,gameHeight);
+  Game_load(gameWidth,gameHeight);
   //初回時のスクリーン設定
   orientationChange();
 });
