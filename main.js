@@ -22,9 +22,18 @@ function Game_load(width,height){
          Image[i].height = Image_urls[i][1].h;
          if(Image_urls[i][1].x) Image[i].x = Image_urls[i][1].x;
          if(Image_urls[i][1].y) Image[i].y = Image_urls[i][1].y;
+         if(Image_urls[i][1].反転) Image[i].scaleY = -1;
+         if(Image_urls[i][1].回転) Image[i].rotation = Image_urls[i][1].回転;
          scene.addChild(Image[i]);
          return;
        };
+
+       scene.addEventListener("touchstart",function(e){
+         E_X = Math.floor(e.x);
+         E_Y = Math.floor(e.y);
+         console.log(E_X);
+         console.log(E_Y);
+       });
 
        return scene;
     };
